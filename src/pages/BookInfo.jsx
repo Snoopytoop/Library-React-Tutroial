@@ -5,10 +5,9 @@ import Rating from "../components/UI/Rating";
 import Price from "../components/UI/Price";
 import Book from "../components/UI/Book";
 
-const BookInfo = ({ books }) => {
+const BookInfo = ({ books, addToCart }) => {
   const { id } = useParams();
-  const book = books.find((book) => +book.id === +id);
-  console.log(book);
+  const book = books.find((book) => +book.id === +id); 
   return (
     <div id="books__body">
       <main id="books__main">
@@ -50,7 +49,7 @@ const BookInfo = ({ books }) => {
                     officiis porro consectetur! Debitis ab voluptates explicabo.
                   </p>
                 </div>
-                <button className="btn">Add to Cart</button>
+                <button className="btn" onClick={() => addToCart(book)}>Add to Cart</button>
               </div>
             </div>
           </div>
